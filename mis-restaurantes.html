@@ -121,11 +121,12 @@
                         <td>3124356789</td>
                         <td>delicias.jpg</td>
                         <td>
-                          <button title="Editar" class="editar btn btn-sm btn-warning text-white" id="buttonPage"><i
+                          <button title="Editar" class="editar btn btn-sm btn-warning text-white" id="buttonPage"
+                            data-bs-toggle="modal" data-bs-target="#modal_editar_restaurante"><i
                               class=" fas fa-edit"></i></button>
 
-                          <button class="eliminar btn btn-sm btn-danger" title="Eliminar" id="buttonPage"><i
-                              class=" fas fa-trash"></i></button>
+                          <button class="eliminar btn btn-sm btn-danger" title="Eliminar" id="buttonPage"
+                            onclick="eliminarRestaurante()"><i class=" fas fa-trash"></i></button>
                         </td>
                       </tr>
                       <tr>
@@ -138,35 +139,39 @@
                         <td>3008764532</td>
                         <td>fogon.jpg</td>
                         <td>
-                          <button title="Editar" class="editar btn btn-sm btn-warning text-white" id="buttonPage"><i
+                          <button title="Editar" class="editar btn btn-sm btn-warning text-white" id="buttonPage"
+                            data-bs-toggle="modal" data-bs-target="#modal_editar_restaurante"><i
                               class=" fas fa-edit"></i></button>
 
-                          <button class="eliminar btn btn-sm btn-danger" title="Eliminar" id="buttonPage"><i
-                              class=" fas fa-trash"></i></button>
+                          <button class="eliminar btn btn-sm btn-danger" title="Eliminar" id="buttonPage"
+                            onclick="eliminarRestaurante()"><i class=" fas fa-trash"></i></button>
                         </td>
                       </tr>
                       <tr>
                         <th scope="row">1</th>
-                        <td>Delicias Huilenses</td>
-                        <td>Cr 8 # 16-8</td>
-                        <td>Huila</td>
-                        <td>Neiva</td>
-                        <td>8787416</td>
-                        <td>3124356789</td>
-                        <td>delicias.jpg</td>
+                        <td>Carmentea Llanera</td>
+                        <td>Cl 108 # 80-96</td>
+                        <td>Villavicencio</td>
+                        <td>Meta</td>
+                        <td>87432143</td>
+                        <td>30115679834</td>
+                        <td>carmentea.jpg</td>
                         <td>
-                          <button title="Editar" class="editar btn btn-sm btn-warning text-white" id="buttonPage"><i
+                          <button title="Editar" class="editar btn btn-sm btn-warning text-white" id="buttonPage"
+                            data-bs-toggle="modal" data-bs-target="#modal_editar_restaurante"><i
                               class=" fas fa-edit"></i></button>
 
-                          <button class="eliminar btn btn-sm btn-danger" title="Eliminar" id="buttonPage"><i
-                              class=" fas fa-trash"></i></button>
+                          <button class="eliminar btn btn-sm btn-danger" title="Eliminar" id="buttonPage"
+                            onclick="eliminarRestaurante()"><i class=" fas fa-trash"></i></button>
                         </td>
                       </tr>
                     </tbody>
                   </table>
                   <div class="text-center ">
-                    <a href="inicio.html" class="btn btn-warning text-white btn-sm" id="buttonPage" type="submit">
-                      Agregar platillo</a>
+                    <button type="button" class="btn btn-warning text-white btn-sm" id="buttonPage"
+                      data-bs-toggle="modal" data-bs-target="#modal_registro_restaurante">
+                      </i> Agregar restaurante</button>
+
                   </div>
                 </div>
               </div>
@@ -174,7 +179,141 @@
 
             </div>
           </div>
+
+
         </div>
+
+
+
+
+
+
+        <!-- Inicio Modal Registrar restaurante -->
+        <div class="modal fade" id="modal_registro_restaurante" tabindex="-1" aria-labelledby="exampleModalLabel"
+          aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title w-100 text-center" id=" exampleModalLabel">Agregar restaurante</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+
+
+                  <div class="col-6">
+                    <label for="">Nombre</label>
+                    <input type="text" class="form-control" name="inputModal" id="txt_nombreRestaurante" placeholder=""
+                      autocomplete="off">
+                  </div>
+
+                  <div class=" col-6">
+                    <label for="">Dirección</label>
+                    <input type="text" class="form-control" id="txt_direccionRestaurante" placeholder=""
+                      autocomplete="off">
+                  </div>
+                  <br>
+                  <div class="col-6">
+                    <label for="">Departamento</label>
+                    <input type="text" class="form-control" id="txt_departamentoRestaurante" placeholder=""
+                      autocomplete="off">
+                  </div>
+                  <div class="col-6">
+                    <label for="">Ciudad o Municipio</label>
+                    <input type="text" class="form-control" id="txt_ciudadRestaurante" placeholder=""
+                      autocomplete="off">
+                  </div>
+                  <div class="col-6">
+                    <label for="">Telefono</label>
+                    <input type="text" class="form-control" id="txt_telefonoRestaurante" placeholder=""
+                      autocomplete="off">
+                  </div>
+                  <div class="col-6">
+                    <label for="">Celular</label>
+                    <input type="text" class="form-control" id="txt_celularRestaurante" placeholder=""
+                      autocomplete="off">
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="modal-footer">
+
+                <button type="button" class="btn btn-primary text-white" id="buttonPage" data-bs-dismiss="modal"
+                  onclick="guardarRestaurante()">Guardar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="buttonPage">Cerrar</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fin Modal Registrar restaurante -->
+
+
+        <!-- Inicio Modal Registrar restaurante -->
+        <div class="modal fade" id="modal_editar_restaurante" tabindex="-1" aria-labelledby="exampleModalLabel"
+          aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title w-100 text-center" id=" exampleModalLabel">Editar restaurante</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+
+
+                  <div class="col-6">
+                    <label for="">Nombre</label>
+                    <input type="text" class="form-control" name="inputModal" id="txt_nombreRestaurante" placeholder=""
+                      autocomplete="off">
+                  </div>
+
+                  <div class=" col-6">
+                    <label for="">Dirección</label>
+                    <input type="text" class="form-control" id="txt_direccionRestaurante" placeholder=""
+                      autocomplete="off">
+                  </div>
+                  <br>
+                  <div class="col-6">
+                    <label for="">Departamento</label>
+                    <input type="text" class="form-control" id="txt_departamentoRestaurante" placeholder=""
+                      autocomplete="off">
+                  </div>
+                  <div class="col-6">
+                    <label for="">Ciudad o Municipio</label>
+                    <input type="text" class="form-control" id="txt_ciudadRestaurante" placeholder=""
+                      autocomplete="off">
+                  </div>
+                  <div class="col-6">
+                    <label for="">Telefono</label>
+                    <input type="text" class="form-control" id="txt_telefonoRestaurante" placeholder=""
+                      autocomplete="off">
+                  </div>
+                  <div class="col-6">
+                    <label for="">Celular</label>
+                    <input type="text" class="form-control" id="txt_celularRestaurante" placeholder=""
+                      autocomplete="off">
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="modal-footer">
+
+                <button type="button" class="btn btn-primary text-white" id="buttonPage" data-bs-dismiss="modal"
+                  onclick="editarRestaurante()">Guardar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="buttonPage">Cerrar</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fin Modal Registrar restaurante -->
+
+
+
+
     </section>
     <!-- <section> close ============================-->
     <!-- ============================================-->
@@ -218,15 +357,22 @@
 
 
 
+
+
+
+
   <!-- ===============================================-->
   <!--    JavaScripts-->
   <!-- ===============================================-->
+  <script src="assets/js/app.js"></script>
   <script src="vendors/@popperjs/popper.min.js"></script>
   <script src="vendors/bootstrap/bootstrap.min.js"></script>
   <script src="vendors/is/is.min.js"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
   <script src="vendors/fontawesome/all.min.js"></script>
   <script src="assets/js/theme.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;display=swap"
     rel="stylesheet">
