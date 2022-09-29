@@ -21455,7 +21455,10 @@ input[type="text"] {
   border-radius: 25px;
 }
 
-
+#acerca {
+  margin-right: 5px;
+  width: 13rem;
+}
 
 
 /*# sourceMappingURL=theme.css.map */
