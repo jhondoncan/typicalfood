@@ -67,8 +67,8 @@
           </ul>
           <div>
 
-            <a href="inicio.html" class="btn btn-danger text-white btn-sm" id="buttonPage" type="submit"> <i
-                class="fas fa-sign-out-alt me-2"></i>Cerrar sesión</a>
+            <button class="btn btn-danger text-white btn-sm" id="buttonPage" type="submit" onclick="cerrarSesion()"> <i
+                class="fas fa-sign-out-alt me-2"></i>Cerrar sesión</button>
 
           </div>
         </div>
@@ -233,6 +233,11 @@
                     <input type="text" class="form-control" id="txt_celularRestaurante" placeholder=""
                       autocomplete="off">
                   </div>
+                  <div class="col-6">
+                    <label for="">Imagen</label>
+                    <input type="file" class="form-control" id="file_imagenRestaurante" placeholder=""
+                      autocomplete="off">
+                  </div>
 
                 </div>
               </div>
@@ -250,7 +255,7 @@
         <!-- Fin Modal Registrar restaurante -->
 
 
-        <!-- Inicio Modal Registrar restaurante -->
+        <!-- Inicio Modal Editar restaurante -->
         <div class="modal fade" id="modal_editar_restaurante" tabindex="-1" aria-labelledby="exampleModalLabel"
           aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static">
           <div class="modal-dialog">
@@ -295,6 +300,11 @@
                     <input type="text" class="form-control" id="txt_celularRestaurante" placeholder=""
                       autocomplete="off">
                   </div>
+                  <div class="col-6">
+                    <label for="">Imagen</label>
+                    <input type="file" class="form-control" id="file_imagenRestaurante" placeholder=""
+                      autocomplete="off">
+                  </div>
 
                 </div>
               </div>
@@ -309,7 +319,7 @@
             </div>
           </div>
         </div>
-        <!-- Fin Modal Registrar restaurante -->
+        <!-- Fin Modal Editar restaurante -->
 
 
 

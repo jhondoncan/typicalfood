@@ -67,8 +67,8 @@
           </ul>
           <div>
 
-            <a href="inicio.html" class="btn btn-danger text-white btn-sm" id="buttonPage" type="submit"> <i
-                class="fas fa-sign-out-alt me-2"></i>Cerrar sesión</a>
+            <button class="btn btn-danger text-white btn-sm" id="buttonPage" type="submit" onclick="cerrarSesion()"> <i
+                class="fas fa-sign-out-alt me-2"></i>Cerrar sesión</button>
 
           </div>
         </div>
@@ -115,11 +115,11 @@
                         <td>$ 17.000</td>
                         <td>lechona.jpg</td>
                         <td>
-                          <button title="Editar" class="editar btn btn-sm btn-warning text-white" id="buttonPage"><i
+                          <button title="Editar" class="editar btn btn-sm btn-warning text-white" id="buttonPage"
+                            data-bs-toggle="modal" data-bs-target="#modal_editar_platillo"><i
                               class=" fas fa-edit"></i></button>
-
-                          <button class="eliminar btn btn-sm btn-danger" title="Eliminar" id="buttonPage"><i
-                              class=" fas fa-trash"></i></button>
+                          <button class="eliminar btn btn-sm btn-danger" title="Eliminar" id="buttonPage"
+                            onclick="eliminarPlatillo()"><i class=" fas fa-trash"></i></button>
                         </td>
                       </tr>
                       <tr>
@@ -129,11 +129,12 @@
                         <td>$ 24.000</td>
                         <td>pollo-frito.jpg</td>
                         <td>
-                          <button title="Editar" class="editar btn btn-sm btn-warning text-white" id="buttonPage"><i
+                          <button title="Editar" class="editar btn btn-sm btn-warning text-white" id="buttonPage"
+                            data-bs-toggle="modal" data-bs-target="#modal_editar_platillo"><i
                               class=" fas fa-edit"></i></button>
 
-                          <button class="eliminar btn btn-sm btn-danger" title="Eliminar" id="buttonPage"><i
-                              class=" fas fa-trash"></i></button>
+                          <button class="eliminar btn btn-sm btn-danger" title="Eliminar" id="buttonPage"
+                            onclick="eliminarPlatillo()"><i class=" fas fa-trash"></i></button>
                         </td>
                       </tr>
                       <tr>
@@ -143,18 +144,20 @@
                         <td>$ 35.000</td>
                         <td>ajiaco.jpg</td>
                         <td>
-                          <button title="Editar" class="editar btn btn-sm btn-warning text-white" id="buttonPage"><i
+                          <button title="Editar" class="editar btn btn-sm btn-warning text-white" id="buttonPage"
+                            data-bs-toggle="modal" data-bs-target="#modal_editar_platillo"><i
                               class=" fas fa-edit"></i></button>
-
-                          <button class="eliminar btn btn-sm btn-danger" title="Eliminar" id="buttonPage"><i
-                              class=" fas fa-trash"></i></button>
+                          <button class="eliminar btn btn-sm btn-danger" title="Eliminar" id="buttonPage"
+                            onclick="eliminarPlatillo()"><i class=" fas fa-trash"></i></button>
                         </td>
                       </tr>
                     </tbody>
                   </table>
                   <div class="text-center ">
-                    <a href="#" class="btn btn-warning text-white btn-sm" id="buttonPage" type="submit">
-                      Agregar platillo</a>
+                    <button type="button" class="btn btn-warning text-white btn-sm" id="buttonPage"
+                      data-bs-toggle="modal" data-bs-target="#modal_registro_platillo">
+                      </i> Agregar platillo</button>
+
                   </div>
                 </div>
               </div>
@@ -163,6 +166,113 @@
             </div>
           </div>
         </div>
+
+
+
+
+        <!-- Inicio Modal Registrar Platillos -->
+        <div class="modal fade" id="modal_registro_platillo" tabindex="-1" aria-labelledby="exampleModalLabel"
+          aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title w-100 text-center" id=" exampleModalLabel">Agregar platillo</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+
+
+                  <div class="col-6">
+                    <label for="">Nombre</label>
+                    <input type="text" class="form-control" name="inputModal" id="txt_nombrePlatillo" placeholder=""
+                      autocomplete="off">
+                  </div>
+
+                  <div class=" col-6">
+                    <label for="">Descripcion</label>
+                    <input type="text" class="form-control" id="txt_descripcionPlatillo" placeholder=""
+                      autocomplete="off">
+                  </div>
+                  <br>
+                  <div class="col-6">
+                    <label for="">Precio</label>
+                    <input type="text" class="form-control" id="txt_precioPlatillo" placeholder="" autocomplete="off">
+                  </div>
+                  <div class="col-6">
+                    <label for="">Imagen</label>
+                    <input type="file" class="form-control" id="file_imagenPlatillo" placeholder="" autocomplete="off">
+                  </div>
+
+
+                </div>
+              </div>
+
+              <div class="modal-footer">
+
+                <button type="button" class="btn btn-primary text-white" id="buttonPage" data-bs-dismiss="modal"
+                  onclick="guardarPlatillo()">Guardar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="buttonPage">Cerrar</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fin Modal Registrar Platillos -->
+
+
+        <!-- Inicio Modal Editar Platillos -->
+        <div class="modal fade" id="modal_editar_platillo" tabindex="-1" aria-labelledby="exampleModalLabel"
+          aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title w-100 text-center" id=" exampleModalLabel">Editar restaurante</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+
+                  <div class="col-6">
+                    <label for="">Nombre</label>
+                    <input type="text" class="form-control" name="inputModal" id="txt_nombrePlatillo" placeholder=""
+                      autocomplete="off">
+                  </div>
+
+                  <div class=" col-6">
+                    <label for="">Descripcion</label>
+                    <input type="text" class="form-control" id="txt_descripcionPlatillo" placeholder=""
+                      autocomplete="off">
+                  </div>
+                  <br>
+                  <div class="col-6">
+                    <label for="">Precio</label>
+                    <input type="text" class="form-control" id="txt_precioPlatillo" placeholder="" autocomplete="off">
+                  </div>
+                  <div class="col-6">
+                    <label for="">Imagen</label>
+                    <input type="file" class="form-control" id="file_imagenPlatillo" placeholder="" autocomplete="off">
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="modal-footer">
+
+                <button type="button" class="btn btn-primary text-white" id="buttonPage" data-bs-dismiss="modal"
+                  onclick="editarPlatillo()">Guardar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="buttonPage">Cerrar</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fin Modal Editar Platillos -->
+
+
+
+
+
     </section>
     <!-- <section> close ============================-->
     <!-- ============================================-->
@@ -209,12 +319,15 @@
   <!-- ===============================================-->
   <!--    JavaScripts-->
   <!-- ===============================================-->
+  <script src="assets/js/app.js"></script>
   <script src="vendors/@popperjs/popper.min.js"></script>
   <script src="vendors/bootstrap/bootstrap.min.js"></script>
   <script src="vendors/is/is.min.js"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
   <script src="vendors/fontawesome/all.min.js"></script>
   <script src="assets/js/theme.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;display=swap"
     rel="stylesheet">
